@@ -1,0 +1,44 @@
+Name: 
+
+PRODIGy.py 
+
+Synopsis:
+
+PRODIGy.py [-h] [-i FILE] [-c] [-o]
+
+Description: 
+
+This piece of software aims to digest amino acid sequences in a FASTA format, and provide an output of cleaved sequences. The enzymes which shall be used in order to digest these protein sequences are:
+
+Trypsin, which cleaves at either Lysine (K), or Arginine (R), unless the subsequent amino acid is Proline (P). 
+
+Endoproteinase Lys-C, which cleaves at Lysine (K), unless the following amino acid is Proline(P).
+
+Endoproteinase Arg-C, which cleaves at Arginine (R), unless the following amino acid is Proline, (P). 
+
+V8 Proteinase, which cleaves at Glutamic acid (E), unless the following amino acid is Proline, (P).
+
+Output will take the form of: 
+
+>I.claudius_0001 2+ 607 1190
+SFIKTGSNAQQDE
+
+Where: 
+-	The first line is taken entirely from the first line of the input file, where:
+o	I.claudius is the name of the organism 
+o	0001 is the unique sequence number
+o	2+ is the frame reading number 
+o	607 is the length of the entire sequence number in amino acids 
+o	1190 is the ORF start position in nucleotides  
+-	SFIKTGSNAQQDE is the protein fragment cleaved when using V8 Proteinase.
+
+Options: 
+
+-i FILE, --input FILE
+         Please enter the file (with extension) that you wish to parse
+-o FILE, --output FILE
+This shall provide an output for observation provided the given   input
+-c {Trypsin,Endoproteinase_LysC,Endoproteinase_Arg,V8_Proteinase}, --choice {Trypsin,Endoproteinase_LysC,Endoproteinase_Arg,V8_Proteinase}
+         Choose which enzyme to use out of Trypsin,
+         Endoproteinase_LysC, Endoproteinase_Arg and
+         V8_Proteinase
